@@ -2,6 +2,7 @@ package bplus;
 import java.util.*;
 import java.io.*; 
 import java.util.Scanner; 
+import java.nio.file.Paths;
 
 public class BPlusTreeDemo {
     public static void main(String[] args) {
@@ -11,8 +12,11 @@ public class BPlusTreeDemo {
         List<Set<String>> transactions = new ArrayList<>();
         
         BufferedReader br = null;
+        String csvFileName = "dictionary.csv";
+        String absolutePath = Paths.get(csvFileName).toAbsolutePath().toString();
+        
   		try {
-  			br = new BufferedReader(new FileReader("C:\\Users\\bngfe\\Downloads\\bplustree_dictionary\\bplustree_dictionary\\dictionary.csv"));
+  			br = new BufferedReader(new FileReader(absolutePath));
   		} catch (FileNotFoundException e) {
   			// TODO Auto-generated catch block
   			e.printStackTrace();
