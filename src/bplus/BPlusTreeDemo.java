@@ -40,19 +40,8 @@ public class BPlusTreeDemo {
   		}
   	   System.out.println("Total word inserted: "+wordCount);
        
-//print the whole dictionary
-//  	 for (Set<String> itemset : transactions) {
-//         System.out.println(itemset);
-//     }
 
-        // Insert some key-value pairs into the B+ tree
-        bPlusTree.insert("apple", "a type of fruit");
-        bPlusTree.insert("banana", "a long curved fruit");
-        bPlusTree.insert("cherry", "a small, round fruit");
-        bPlusTree.insert("date", "a sweet fruit that grows on palm trees");
-        bPlusTree.insert("elderberry", "a small, tart fruit");
-        bPlusTree.insert("fig", "a sweet fruit that grows on trees");
-
+        
         // Traverse the B+ tree and print its contents
         Scanner in = new Scanner(System.in);  
         for(;;) {
