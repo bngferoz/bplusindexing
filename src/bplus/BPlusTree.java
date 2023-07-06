@@ -111,11 +111,11 @@ public class BPlusTree {
     }
 
     // Traverse the tree and print its contents
-    public void traverse(String word) {
-        traverse(root, word);
+    public boolean traverse(String word) {
+        return traverse(root, word);
     }
 
-    private void traverse(BPlusTreeNode node, String word) {
+    private boolean traverse(BPlusTreeNode node, String word) {
         int i;
         for (i = 0; i < node.getNumKeys(); i++) {
             if (!node.isLeaf()) {
@@ -124,11 +124,13 @@ public class BPlusTree {
             if(node.getKey(i).equals(word)) 
             {
                 System.out.print(node.getKey(i) + ": " + node.getValue(i));
+                return true;
                 
             }
         }
         if (!node.isLeaf()) {
             traverse(node.getChild(i), word);
         }
+        return false;
     }
 }

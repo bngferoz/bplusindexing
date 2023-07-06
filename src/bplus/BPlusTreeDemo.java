@@ -47,7 +47,9 @@ public class BPlusTreeDemo {
         for(;;) {
         	System.out.println("Enter the word you want to search: ");
         	String wordToBeSearched = in.nextLine();
-        	bPlusTree.traverse(wordToBeSearched);
+        	if(!bPlusTree.traverse(wordToBeSearched)) {
+        		System.out.println("Not found!");
+        	}
         	System.out.println("\n");
         	if(wordToBeSearched.equals("0"))break;
             
